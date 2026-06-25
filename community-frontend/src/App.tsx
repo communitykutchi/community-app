@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route , Navigate} from "react-router-dom";
 
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Feed from "./pages/Feed";
-import MainLayout from "./layout/MainLayout";
-import PrivateRoute from "./routes/PrivateRoute";
+import Home from "./pages/Home.js";
+import Login from "./pages/Login.js";
+import Register from "./pages/Register.js";
+import Feed from "./pages/Feed.js";
+import MainLayout from "./layout/MainLayout.js";
+import PrivateRoute from "./routes/PrivateRoute.js";
 
 function App() {
   return (

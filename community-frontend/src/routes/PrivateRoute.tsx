@@ -1,12 +1,12 @@
 import { Navigate } from "react-router-dom";
-import { JSX } from "react"; // ⭐ FIX: JSX import required
+import { type ReactNode } from "react";
 
-export default function PrivateRoute({ children }: { children: JSX.Element }) {
+export default function PrivateRoute({ children }: { children: ReactNode }) {
   const token = localStorage.getItem("token");
 
   if (!token) {
     return <Navigate to="/login" replace />;
   }
 
-  return children;
+  return <>{children}</>;
 }

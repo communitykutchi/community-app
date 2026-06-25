@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../api/axios";
+import API from "../api/axios.js";
 
 export default function Login() {
   const [identifier, setIdentifier] = useState("");
@@ -10,7 +10,7 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError("");
     setLoading(true);

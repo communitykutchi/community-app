@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import api from '../api/axios';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
+import api from '../api/axios.js';
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -21,7 +21,7 @@ export default function Register() {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+  function handleChange(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     const { name, value: rawValue } = e.target;
     let value = rawValue as string;
 
@@ -41,7 +41,7 @@ export default function Register() {
     setForm((f) => ({ ...f, [name]: value }));
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
     if (!form.fullName || !form.mobile) {

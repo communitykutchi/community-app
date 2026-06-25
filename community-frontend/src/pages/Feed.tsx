@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import API from "../api/axios";
+import { useEffect, useState, type FormEvent } from "react";
+import API from "../api/axios.js";
 
 interface Post {
   _id: string;
@@ -32,7 +32,7 @@ export default function Feed() {
     loadPosts();
   }, []);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError("");
 
